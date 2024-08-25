@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    input[name=book]:checked + label {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <fieldset>
+    <legend>라디오 박스</legend>
+    <input type="radio" name="book" id="js" value="js">
+    <label for="js">자바스크립트</label>
+
+    <input type="radio" name="book" id="python" value="py">
+    <label for="python">파이썬</label>
+
+    <input type="radio" name="book" id="scratch" value="sc">
+    <label for="scratch">스크래치</label>
+  </fieldset>
+
+  <fieldset>
+    <legend>선택 박스</legend>
+    <select name="" id="">
+      <option value="0">::선택하세요::</option>
+      <option value="js">자바스크립트</option>
+      <option value="py">파이썬</option>
+      <option value="sc">스크래치</option>
+    </select>
+  </fieldset>
+
+  <script>
+    let books = document.querySelectorAll("input[name='book']");
+    let select = document.querySelector("select");
+
+    for(let i = 0; i < books.length; i++){
+      books[i].addEventListener("change", function(){
+        
+        for(let k = 0; k < select.options.length; k++) {
+          if(select.options[k].value === this.value) {
+            select.options[k].selected = true;
+          }
+        }
+      });
+    }
+
+    select.addEventListener("change", function(){
+      for(let i = 0; i < books.length; i++){
+        books[i].checked = false;
+        if(books[i].value === this.value) {
+          books[i].checked = true;
+        }
+      }
+    });
+
+    // let books = document.querySelectorAll("input[name='book']");
+    // let select = document.querySelector("select");
+
+    // for(let i = 0; i < books.length; i++) {
+    //   books[i].onchange = function(){
+        
+    //     for(let j = 0; j < select.options.length; j++){
+    //       if(select.options[j].value === this.value) {
+    //         select.options[j].selected = true;
+    //       }
+    //     }
+    //     // select.value = this.value;
+    //   }
+    // }
+
+    // select.onchange = function() {
+    //   for(let j = 0; j < books.length; j ++){
+    //     books[j].checked = false;
+    //     if(books[j].value === this.value){
+    //       books[j].checked = true;
+    //     }
+    //   }
+    // }
+  </script>
+</body>
+</html>

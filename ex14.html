@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    button {
+      color: #fff;
+      padding: .5em 1em;
+      text-align: center;
+      font-size: 1em;
+      border: none;
+      background-color: lightcoral;
+    }
+  </style>
+</head>
+<body>
+  <button type="button" onclick="makeButton()">만들기</button>
+  <script>
+    function makeButton() {
+      let btn = document.createElement("button");
+      btn.onclick = function() {
+        alert("새롤운 버튼 클릭");
+      }
+
+      let txt = document.createTextNode("새로운 버튼");
+      btn.appendChild(txt);
+      document.body.appendChild(btn);
+    }
+  </script>
+</body>
+</html>

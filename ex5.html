@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #box {
+      width: 100px;
+      height: 100px;
+      background-color: lightcoral;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="box" onmouseover="overBox(this)" onmousedown="downBox(this)" onmouseup="upBox(this)" onmouseout="outBox(this)"></div>
+  <script>
+    // mouseover
+    function overBox(obj) {
+      obj.style.backgroundColor = "lightgreen";
+    }
+    //mousedown
+    function downBox(obj) {
+      obj.style.backgroundColor = "lightblue";
+    }
+    //mouseup
+    function upBox(obj) {
+      obj.style.backgroundColor = "lightgray";
+    }
+    //mouseout
+    function outBox(obj) {
+      obj.style.backgroundColor = "lightcoral";
+    }
+  </script>
+</body>
+</html>

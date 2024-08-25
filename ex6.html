@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    input[name="search"] {
+      padding: 5px;
+      border: 2px solid #aaa;
+    }
+  </style>
+</head>
+<body>
+  <input 
+  type="text" 
+  name="search" 
+  onkeydown="downInput()"
+  onkeyup="upInput()"
+  placeholder="검색어를 입력하세요"
+>
+
+  <script>
+    function downInput() {
+      console.log("keydown");
+    }
+    function upInput() {
+      console.log("keyup");
+    }
+  </script>
+</body>
+</html>

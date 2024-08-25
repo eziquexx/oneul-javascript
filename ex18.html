@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #mylist > li {
+      padding: 5px;
+    }
+    #mylist li:hover {
+      cursor: pointer;
+      color:#ddd;
+      background-color: lightcoral;
+    }
+  </style>
+</head>
+<body>
+  <ol id="mylist">
+    <li>window.open() 기본형</li>
+    <li>화면 이동</li>
+    <li>팝업창 열기</li>
+    <li>팝업창 제어</li>
+    <li><a href="http://www.darakwon.co.kr" target="_blank">다락원</a></li>
+  </ol>
+
+  <script>
+    let lists = document.querySelectorAll("#mylist li");
+
+    lists[0].onclick = function(){
+      window.open();
+    }
+    lists[1].onclick = function(){
+      window.op
+      en("http://darakwon.co.kr", "_self");
+    }
+    lists[2].onclick = function(){
+      window.open("http://darakwon.co.kr",'','width=400, height=400');
+    }
+    lists[3].onclick = function(){
+      let win = window.open("", "", "width=200, height=200");
+      win.document.write("<h1>새창입니다.</h1>");
+      win.opener.document.write("<h1>부모창입니다.</h1>");
+    }
+
+  </script>
+</body>
+</html>

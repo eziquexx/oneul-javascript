@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      display: flex;
+    }
+    .container > div {
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+      background-color: lightcoral;
+      border-radius: 50%;
+    }
+    .container > div:nth-of-type(2) {
+      background-color: lightblue;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div></div>
+    <div></div>
+  </div>
+
+  <script>
+    document.querySelector('.container > div:nth-of-type(1)').onclick = function() {
+      this.style.backgroundColor = "lightgreen";
+    }
+    document.querySelector('.container > div:nth-of-type(1)').onmouseout = function() {
+      this.style.backgroundColor = "lightcoral";
+    }
+    document.querySelector(".container > div:nth-of-type(2)").onmouseover = function() {
+      this.style.borderRadius = "0";
+    }
+    document.querySelector(".container > div:nth-of-type(2)").onmouseout = function() {
+      this.style.borderRadius = "50%";
+    }
+  </script>
+</body>
+</html>

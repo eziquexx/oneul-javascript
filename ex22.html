@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    fieldset {
+      margin: 10px;
+    }
+    legend {
+      padding: 5px;
+      color: #fff;
+      background-color: lightcoral;
+    }
+  </style>
+</head>
+<body>
+  <fieldset>
+    <legend>브라우저 이름(appName)</legend>
+    <div id="name"></div>
+  </fieldset>
+  <fieldset>
+    <legend>브라우저 이름(appCodeName)</legend>
+    <div id="codeName"></div>
+  </fieldset>
+  <fieldset>
+    <legend>브라우저 이름(languae)</legend>
+    <div id="language"></div>
+  </fieldset>
+  <fieldset>
+    <legend>브라우저 이름(online)</legend>
+    <div id="online"></div>
+  </fieldset>
+
+  <script>
+    let browserName = document.getElementById("name");
+    browserName.innerText = navigator.appName;
+
+    let codeName = document.getElementById("codeName");
+    codeName.innerText = navigator.appCodeName;
+
+    let language = document.getElementById("language");
+    language.innerText = navigator.language;
+
+    let online = document.getElementById("online");
+    online.innerText = navigator.onLine;
+  </script>
+</body>
+</html>

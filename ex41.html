@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #canvas {
+      background-color: #eee;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+</body>
+<script>
+  let canvas, ctx, height, x, y;
+  let dx = 6;
+  let dy = 5;
+
+  window.onload = function() {
+    canvas = document.getElementById("canvas");
+    ctx = canvas.getContext("2d");
+
+    width = canvas.width;
+    height = canvas.height;
+    x = canvas.width;
+    y = canvas.height;
+
+    setInterval(move, 20);
+  };
+
+  function move() {
+    //clearRect()로 캔버스 영역을 지우도록 하고,
+    //circle()로 도형을 그린다.
+    //x,y는 도형의 중심점으로
+    //이동거리 dx,dy에 의해 실행할 때마다 값이 변경된다.
+    //tip. width와 height는 캔버스의 크기이자 영역의 경계이다.
+    //도형(그래픽)의 중심과 값을 비교하여
+    //캔버스의 영역을 벗어나지 않도록 이동거리의 방향을 바꾸어주자.
+    ctx.clearRect(0, 0, width, height);
+    circle(x, y, 10);
+
+    if(x + dx > width || x + dx < 0) {
+      dx = -dx;
+    }
+    if(y + dy > height || y + dy < 0) {
+      dy = -dy;
+    }
+
+    x += dx;
+    y += dy;
+  };
+
+  function circle(x, y, r) {
+    ctx.beginPath();
+    ctx.arc(x, y, r, 0, 2 * Math.PI);
+    ctx.fillStyle = "blue";
+    ctx.fill();
+  };
+</script>
+</html>

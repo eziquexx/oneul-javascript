@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    img {
+      width: 150px;
+    }
+    canvas {
+      margin: 5px;
+      background-color: #eee;
+    }
+  </style>
+</head>
+<body>
+  <img src="./google-logo.png" alt="">
+  <br>
+  <canvas id="canvas1"></canvas>
+  <canvas id="canvas2"></canvas>
+</body>
+<script>
+  let canvas1 = document.getElementById("canvas1");
+  let canvas2 = document.getElementById("canvas2");
+
+  //그래디언트
+  let ctx1 = canvas1.getContext("2d");
+  let grd1 = ctx1.createLinearGradient(0, 0, 300, 0);
+  //let grd1 = ctx1.createRadialGradient(150, 75, 30, 150, 75, 150);
+  grd1.addColorStop(0, "red");
+  grd1.addColorStop(1, "white");
+
+  ctx1.fillStyle = grd1;
+  ctx1.fillRect(10, 10, 280, 130);
+
+
+  //이미지
+  let img2 = document.querySelector("img");
+  img2.onload = function() {
+    setTimeout(function(){
+      let ctx2 = canvas2.getContext("2d");
+      ctx2.drawImage(img2, 50, 50);
+    }, 1000);
+  }
+
+</script>
+</html>

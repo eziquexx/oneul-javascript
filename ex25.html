@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #circle {
+      width: 100px;
+      height: 100px;
+      background-color: navy;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <button type="button" onclick="doMove();">출발</button>
+  <button type="button" onclick="doStop();">멈춤</button>
+  <hr>
+  <div id="circle"></div>
+
+  <script>
+    let run;
+    let span = 0;
+    
+    function doMove() {
+      run = setInterval(function(){
+        let circle = document.getElementById("circle");
+
+        span += 10;
+        circle.style.marginLeft = span + "px";
+
+      }, 250);
+    }
+
+    function doStop() {
+      clearInterval(run);
+    }
+
+  </script>
+</body>
+</html>

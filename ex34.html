@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    input[type="search"], textarea {
+      width: 100%;
+      padding: 5px;
+      margin: 5px 0;
+      border: 1px solid #aaa;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <fieldset>
+    <legend>oninput, onsearch</legend>
+    <input type="search" placeholder="검색어 입력">
+    <textarea id="content"></textarea>
+  </fieldset>
+
+  <script>
+    let search = document.querySelector("input[type='search']");
+    let contact = document.querySelector("#content");
+
+    search.oninput = function(){
+      contact.value = this.value;
+    }
+
+    search.onsearch = function(){
+      contact.value = this.value+"를 검색합니다.";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #mylist {
+      list-style: none;
+      padding: 0;
+    }
+    #mylist > li {
+      line-height: 2em;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      cursor: pointer;      
+      text-indent: 32px;
+    }
+    .clicked {
+      background-color: lightgreen !important;
+    }
+  </style>
+</head>
+<body>
+  <ul id="mylist">
+    <li>1번째 목록</li>
+    <li>2번째 목록</li>
+    <li>3번째 목록</li>
+  </ul>
+
+  <script>
+    const secondLi = document.querySelector("#mylist > li:nth-child(2)");
+    const thirdLi = document.querySelector("#mylist > li:nth-child(3)");
+    const allLi = document.querySelectorAll("#mylist > li");
+
+    for(let i = 0; i < allLi.length; i++) {
+      allLi[i].addEventListener("click", function() {
+        this.style.backgroundColor = "lightgreen";
+      });
+      allLi[i].addEventListener("mouseover", function() {
+        this.style.backgroundColor = "#eee";
+      });
+      allLi[i].addEventListener("mouseout", function() {
+        this.style.backgroundColor = "transparent";
+      });
+ 
+    }
+
+
+  </script>
+</body>
+</html>

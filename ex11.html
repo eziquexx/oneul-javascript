@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    window.onresize = function() {
+      console.log("브라우저 크기 - viewport");
+      console.log(window.innerWidth + "x" + window.innerHeight);
+
+      console.log("모니터의 크기 - device size");
+      console.log(window.screen.width + "x" + window.screen.height)
+    }
+  </script>
+</body>
+</html>

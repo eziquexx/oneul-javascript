@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button type="button" onclick="search()">태그로 찾기</button>
+  <ul>
+    <li>첫 번째 리스트입니다.</li>
+    <li>두 번째 리스트입니다.</li>
+    <li>세 번째 리스트입니다.</li>
+    <li>네 번째 리스트입니다.</li>
+    <li>다섯 번째 리스트입니다.</li>
+  </ul>
+
+  <script>
+    let colors = ["red", "orange", "yellow", "green", "blue"];
+
+    function search() {
+      let items = document.getElementsByTagName("li");
+      console.log(items.length);
+
+      for(let i = 0; i < items.length; i++) {
+        items[i].style.backgroundColor=`${colors[i]}`;
+      }
+    }
+  </script>
+</body>
+</html>

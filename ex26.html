@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #circle {
+      position: absolute;
+      top: 100px;
+      left: 0px;
+      width: 100px;
+      height: 100px;
+      background-color: navy;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="circle"></div>
+
+  <script>
+    let myinterval;
+    let flag = false;
+    let $circle = document.getElementById("circle");
+
+    $circle.addEventListener("click", function() {
+      let that = this;
+      that.style.left = 0;
+
+      if(flag = !flag) {
+        myinterval = setInterval(function() {
+          that.style.backgroundColor = "orange";
+          that.style.left = parseInt(that.style.left) + 10 + "px";
+        }, 250);
+      } else {
+        clearInterval(myinterval);
+        that.style.backgroundColor = "navy";
+      }
+    });
+
+
+  </script>
+</body>
+</html>

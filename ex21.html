@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <fieldset>
+    <legend>먼저 실행하세요</legend>
+     <a href="ex21.html">앞으로 가기</a>
+  </fieldset>
+
+  <fieldset>
+    <legend>다음 실행하세요</legend>
+     <input type="button" value="뒤로 가기">
+  </fieldset>
+
+  <script>
+    let btn = document.querySelector("input");
+    btn.onclick = function() {
+      history.back();
+    }
+  </script>
+</body>
+</html>

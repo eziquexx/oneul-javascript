@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #box {
+      width: 100px;
+      height: 100px;
+      background-color: navy;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="box"></div>
+
+  <script>
+    let box = document.getElementById("box");
+    
+    box.addEventListener("click", function() {
+      let that = this;
+      setTimeout(function() {
+        that.style.width = "200px";
+        that.style.height = "200px";
+        that.style.backgroundColor = "orange";
+        that.style.borderRadius = "50%";
+      }, 1000);
+    });
+    
+    
+  </script>
+</body>
+</html>

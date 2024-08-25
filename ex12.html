@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      display: block;
+    }
+    #red, #blue {
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+      border-radius: 10px;
+      background-color: lightcoral;
+      cursor: pointer;
+    }
+    #blue {
+      background-color: lightblue;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="red"></div>
+    <div id="blue"></div>
+  </div>
+  
+  <script>
+    let redBox = document.getElementById("red");
+    let blueBox = document.getElementById("blue");
+
+    redBox.addEventListener("click", clickRed);
+
+    function clickRed() {
+      this.style.boxShadow = "2px 2px 2px #888";
+    }
+
+    blueBox.addEventListener("mouseover", function() {
+      this.style.boxShadow = "2px 2px 2px #888";
+    });
+    blueBox.addEventListener("mouseout", function() {
+      this.style.boxShadow = "none";
+    });
+  </script>
+</body>
+</html>

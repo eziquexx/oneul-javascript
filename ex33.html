@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    label.title {
+      display: inline-block;
+      width: 100px;
+    }
+    input.login {
+      width: 200px;
+      padding: 5px;
+      margin: 5px 0;
+      border: 1px solid #ddd;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <fieldset>
+    <legend>onfocus, onblur</legend>
+    <label class="title">아이디</label>
+    <input type="text" class="login" placeholder="아이디">
+    <br>
+    <label class="title">비밀번호</label>
+    <input type="password" class="login" placeholder="비밀번호">
+  </fieldset>
+
+  <script>
+    let inputs = document.querySelectorAll(".login");
+
+    for(let i = 0; i < inputs.length; i++) {
+      inputs[i].onfocus = function (){
+        this.style.backgroundColor = "yellow";
+      }
+      inputs[i].onblur = function (){
+        this.style.backgroundColor = "transparent";
+      }
+    }
+  </script>
+</body>
+</html>

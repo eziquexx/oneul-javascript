@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .coral { background-color: lightcoral; }
+    .green { background-color: lightgreen; }
+    .blue { background-color: lightblue; }
+  </style>
+</head>
+<body>
+  <button type="button" onclick="change()">변경</button>
+  <ul>
+    <li class="coral">첫 번째 리스트입니다.</li>
+    <li>두 번째 리스트입니다.</li>
+    <li class="green">세 번째 리스트입니다.</li>
+    <li>네 번째 리스트입니다.</li>
+    <li id="third" class="blue">다섯 번째 리스트입니다.</li>
+  </ul>
+
+  <script>
+    function change() {
+      let coral = document.querySelector(".coral");
+      console.log(coral.length);
+    }
+  </script>
+</body>
+</html>

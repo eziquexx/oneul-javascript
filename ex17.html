@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    input[name="addList"] {
+      padding: 5px;
+      display: block;
+      width: 80%;
+    }
+    #mylist {
+      list-style: none;
+      padding: 0;
+    }
+    #mylist li {
+      line-height: 2em;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      text-indent: 15px;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" name="addList" placeholder="글자를 입력해주세요.">
+  <ul id="mylist">
+    <li>1번째 목록</li>
+  </ul>
+  <script>
+    const newList = document.querySelector("input[name='addList']");
+    
+    // newList.onkeydown = function(event){
+    //   if(event.which === 13 && event.target.value.length > 2) {
+    //     let ul = document.getElementById("mylist");
+    //     let newitem = document.createElement("li");
+    //     let txt = document.createTextNode(this.value);
+    //     newitem.appendChild(txt);
+    //     document.getElementById("mylist").appendChild(newitem);
+    //   }
+    // }
+
+
+  // .addEventListener 메서드를 사용하여 newList에 keydown 이벤트 주기
+  newList.addEventListener("keydown", function(event) { // 파라미터로 event값 받기
+    // 받아온 event의 값이 13과 동일하고 입력한 글자의 길이가 1 이상이면 실행되도록 만들기.
+    if(event.key === "Enter" && event.target.value.length > 1) {
+    	// $ul변수에 mylist 요소 가져와 담기.
+        let $ul = document.getElementById("mylist");
+        
+        // newItem변수에 li 요소를 생성하여 담기.
+        let newItem = document.createElement("li");
+        
+        // txt변수에 newList변수의 value값을 담기.
+        let txt = document.createTextNode(newList.value);
+        
+        // newItem에 txt를 자식으로 추가하기.
+        newItem.appendChild(txt);
+        
+        // $ul에 newItem을 자식으로 추가하기.
+        $ul.appendChild(newItem);
+    }
+});
+
+  </script>
+</body>
+</html>

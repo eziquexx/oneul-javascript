@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #mylist {
+      list-style: none;
+      padding: 0;
+    }
+    #mylist > li {
+      line-height: 2em;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      text-indent: 10px;
+    }
+  </style>
+</head>
+<body>
+  <ul id="mylist">
+    <li>1번째 목록</li>
+    <li>2번째 목록</li>
+    <li>3번째 목록</li>
+    <li>4번째 목록</li>
+    <li>5번째 목록</li>
+  </ul>
+
+  <script>
+    let lists = document.querySelectorAll("#mylist > li");
+
+    for(let i = 0; i < lists.length; i++) {
+      lists[i].addEventListener("click", function() {
+        console.log(this.childNodes[0].nodeValue);
+        this.parentNode.removeChild(this);
+        // this.remove();
+      });
+    }
+  </script>
+</body>
+</html>
