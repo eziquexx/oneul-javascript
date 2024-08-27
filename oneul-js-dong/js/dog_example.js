@@ -9,7 +9,8 @@ var Dog ={
     draw: function(){            
         var dog = new Image();   
         dog.src = this.dogImage;    
-        context.drawImage(dog,this.x,this.y,this.dogW,this.dogH);   
+        context.drawImage(dog,this.x,this.y,this.dogW,this.dogH); 
+        
     },
 
     move: function(){      
