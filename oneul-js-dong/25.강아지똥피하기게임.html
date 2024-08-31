@@ -62,24 +62,23 @@ function keyControl(){
 }   
     
 function playGame(){      
-    // Dog.move(); 
-        Dog.draw();     
-    // var dongNum = 5;
-    // var dong = new Array();
-    // for(var i = 0; i < dongNum; i++)
-    //     dong[i] = new Dong();
+    
+    var dongNum = 5;
+    var dong = new Array();
+    for(var i = 0; i < dongNum; i++)
+        dong[i] = new Dong();
 
-    // intervalId = setInterval(function(){
-    //     context.clearRect(0,0,canvasW,canvasH); 
-    //     for(var i = 0; i < dongNum; i++){ 
-    //         dong[i].move();   
-    //         dong[i].draw();
-    //         dong[i].checkCollision(Dog);   
-    //     }                                  
-    //     Dog.move(); 
-    //     Dog.draw();
-    //     drawScore();                
-    // }, 20);
+    intervalId = setInterval(function(){
+        context.clearRect(0,0,canvasW,canvasH); 
+        for(var i = 0; i < dongNum; i++){ 
+            dong[i].move();   
+            dong[i].draw();
+            dong[i].checkCollision(Dog);   
+        }                                  
+        Dog.move(); 
+        Dog.draw();
+        drawScore();                
+    }, 20);
 }  
 
 function gameOver(){           
