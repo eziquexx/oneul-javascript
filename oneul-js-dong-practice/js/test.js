@@ -9,8 +9,8 @@ const rightDogImg = './img/dogRight.png';
 // Poo 클래스 정의
 class Poo {
   constructor(src) {
-    this.width = 50;
-    this.height = 50;
+    this.width = 40;
+    this.height = 40;
     this.x = Math.random() * (canvas.width - this.width);
     this.y = 0; // 시작 y 위치를 화면 위쪽으로 설정
     this.speed = 1;
@@ -111,7 +111,7 @@ const Game = {
     resizeCanvas();
     Dog.draw();
     this.generatePoos();
-    this.intervalId = setInterval(() => this.generatePoos(), 2000); // 2초마다 Poo 5개 생성
+    this.intervalId = setInterval(() => this.generatePoos(), 3000); // 2초마다 Poo 5개 생성
     this.animate(); // 애니메이션 루프 시작
   },
 
